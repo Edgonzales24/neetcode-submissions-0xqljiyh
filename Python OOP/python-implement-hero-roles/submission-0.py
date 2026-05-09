@@ -1,0 +1,34 @@
+from abc import ABC, abstractmethod
+
+# TODO: Create the Attacker, Defender, and Healer interfaces
+class Attacker(ABC):
+    def attack(self) -> str:
+        pass
+
+class Defender(ABC):
+    def defend(self) -> str:
+        pass
+
+class Healer(ABC):
+    def heal(self) -> str:
+        pass
+
+
+# Don't modify the following code
+class Knight(Attacker, Defender, Healer):
+    def __init__(self, name: str) -> None:
+        self.name = name
+    
+    def attack(self) -> None:
+        print(f"{self.name} attacks with sword!")
+        
+    def defend(self) -> None:
+        print(f"{self.name} raises shield!")
+        
+    def heal(self) -> None:
+        print(f"{self.name} uses healing potion!")
+
+hero = Knight("Sir Galahad")
+hero.attack()  
+hero.defend()  
+hero.heal()
